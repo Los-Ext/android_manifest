@@ -1,36 +1,38 @@
-LineageOS
+LineageOS - Ext
 ===========
 
 Getting started
 ---------------
 
-To get started with Android/LineageOS, you'll need to get familiar with [Source Control Tools](https://source.android.com/setup/develop).
-
-To initialize your local repository using the LineageOS trees, use a command like this:
+### Create a directory for the source files & Go into created directory
 ```
-repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs
+mkdir los
+cd los
 ```
-Then to sync up:
+### Initializing Repo
 ```
-repo sync
+repo init --depth=1 --no-repo-verify -u https://github.com/Los-Ext/manifest.git -b lineage-21.0 --git-lfs -g default,-mips,-darwin,-notdefault
 ```
-Please see the [LineageOS Wiki](https://wiki.lineageos.org/) for building instructions, by device.
 
+### Now sync sources
+```
+repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync
+```
 
-Submitting patches
-------------------
-Patches are always welcome! Please submit your patches via LineageOS Gerrit!
+### Now run
+```
+. build/envsetup.sh
+lunch lineage_devicecodename-buildtype
+m bacon
+```
 
-Simply follow our guide on [how to submit patches](https://wiki.lineageos.org/submitting-patch-howto.html).
+### Gapps Flags
+```
+WITH_GMS := true
+```
 
-To view the status of your and others' patches, visit [LineageOS Gerrit Code Review](https://review.lineageos.org/).
+### Maintainer Overlays
+follow : https://github.com/ImSpiDy/device_xiaomi_lavender/blob/14/overlay-lineage/packages/apps/Settings/res/values/ext_strings.xml
 
-
-Buildbot
---------
-
-All supported devices are built weekly and periodically as changes are committed to ensure the source trees remain buildable.
-
-You can view the current build statuses at [LineageOS Buildkite](https://buildkite.com/lineageos).
-
-Builds produced weekly by the buildbot can be downloaded from [LineageOS downloads](https://download.lineageos.org/).
+### Signed Builds
+clone your private Keys in vendor/lineage-priv/keys
