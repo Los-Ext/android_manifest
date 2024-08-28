@@ -37,9 +37,9 @@
   <project path="vendor/custom-preference" name="vendor_custom-preference" remote="ext" />
   <project path="vendor/addons" name="android_vendor_addons" remote="ext" />
   <project path="vendor/lineage" name="android_vendor_lineage" remote="R" />
+  <project path="bionic" name="android_bionic" remote="ext" />
 
  <!-- crdroid additions -->
-  <project path="bionic" name="android_bionic" remote="crd" />
   <project path="external/arm-optimized-routines" name="android_external_arm-optimized-routines" remote="crd" />
   <project path="external/jemalloc_new" name="android_external_jemalloc-new" remote="crd" />
   <project path="packages/services/OmniJaws" name="android_packages_services_OmniJaws" remote="crd" />
