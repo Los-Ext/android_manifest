@@ -11,7 +11,7 @@ cd los
 ```
 ### Initializing Repo
 ```
-repo init --depth=1 --no-repo-verify -u https://github.com/Los-Ext/manifest.git -b 14R --git-lfs -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Los-Ext/manifest.git -b lineage-21.0 --git-lfs -g default,-mips,-darwin,-notdefault
 ```
 
 ### Now sync sources
