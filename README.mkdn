@@ -1,38 +1,32 @@
-LineageOS - Ext
-===========
+# **LineageOS - Ext**
 
-Getting started
----------------
+## **Getting Started**
 
-### Create a directory for the source files & Go into created directory
-```
-mkdir los
-cd los
-```
-### Initializing Repo
+
+### Initialising the Repo
 ```
 repo init --depth=1 --no-repo-verify -u https://github.com/Los-Ext/manifest.git -b 14 --git-lfs -g default,-mips,-darwin,-notdefault
 ```
 
-### Now sync sources
+### Sync up sources
 ```
 repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync
 ```
 
-### Now run
+### Build the ROM
 ```
 . build/envsetup.sh
-lunch lineage_devicecodename-buildtype
+lunch lineage_<devicecodename>-<buildtype>
 m bacon
 ```
 
-### Gapps Flags
-```
-WITH_GMS := true
-```
+### Additional stuff (optional)
+ - To build gapps add `WITH_GMS := true` flag in your `lineage_<device>.mk`
 
-### Maintainer Overlays
-follow : https://github.com/ImSpiDy/device_xiaomi_lavender/blob/14/overlay-lineage/packages/apps/Settings/res/values/ext_strings.xml
+**Maintainer Overlays**
 
-### Signed Builds
-clone your private Keys in vendor/lineage-priv/keys
+ - Refer to this [change](https://github.com/ImSpiDy/device_xiaomi_lavender/commit/f4cbcc3f48c8fe9856d9f5d4e7c081461c5d6390) for maintainer  & device overlays.
+
+**Signed Builds**
+
+ - We support inline singing, simply place your private keys in `vendor/lineage-priv/keys` directory and it'll do the rest.
