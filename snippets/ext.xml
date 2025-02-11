@@ -5,6 +5,14 @@
            fetch="https://github.com/Los-Ext"
            revision="refs/heads/15" />
 
+  <remote  name="crd"
+           fetch="https://github.com/crdroidandroid"
+           revision="refs/heads/15.0" />
+
+  <remote  name="crd-gl"
+           fetch="https://gitlab.com/crdroidandroid"
+           revision="refs/heads/15.0" />
+
  <!-- LosExt additions -->
   <project path="build/make" name="android_build" groups="pdk,sysui-studio" remote="ext" >
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
@@ -38,5 +46,21 @@
   <project path="vendor/lineage" name="android_vendor_lineage" remote="ext" />
   <project path="vendor/support" name="android_vendor_support" remote="ext" />
   <project path="bionic" name="android_bionic" remote="ext" />
+
+ <!-- crdroid additions -->
+  <project path="build/bazel" name="android_build_bazel" groups="pdk" remote="crd" >
+    <linkfile src="bazel.WORKSPACE" dest="WORKSPACE" />
+    <linkfile src="bazel.BUILD" dest="BUILD" />
+  </project>
+
+  <project path="external/arm-optimized-routines" name="android_external_arm-optimized-routines" remote="crd" />
+  <project path="external/jemalloc_new" name="android_external_jemalloc-new" remote="crd" />
+  <project path="external/libjpeg-turbo" name="android_external_libjpeg-turbo" remote="crd" />
+  <project path="external/sqlite" name="android_external_sqlite" remote="crd" />
+  <project path="packages/services/OmniJaws" name="android_packages_services_OmniJaws" remote="crd" />
+  <project path="packages/apps/FaceUnlock" name="android_packages_apps_FaceUnlock" remote="crd-gl" />
+  <project path="packages/apps/LMOFreeform" name="android_packages_apps_LMOFreeform" remote="crd" />
+  <project path="system/memory/lmkd" name="android_system_memory_lmkd" remote="crd" />
+  <project path="toolchain/pgo-profiles" name="android_toolchain_pgo-profiles" remote="crd" />
 
 </manifest>
