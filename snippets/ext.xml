@@ -5,6 +5,10 @@
            fetch="https://github.com/Los-Ext"
            revision="refs/heads/15" />
 
+  <remote  name="ext-gl"
+           fetch="https://gitlab.com/Los-Ext"
+           revision="refs/heads/fifteen" />
+
   <remote  name="crd"
            fetch="https://github.com/crdroidandroid"
            revision="refs/heads/15.0" />
@@ -49,6 +53,7 @@
   <project path="system/core" name="android_system_core" remote="ext" />
   <project path="system/sepolicy" name="android_system_sepolicy" remote="ext" />
   <project path="vendor/addons" name="android_vendor_addons" remote="ext" />
+  <project path="vendor/google/pixel" name="vendor_google_pixel" remote="ext-gl" />
   <project path="vendor/lineage" name="android_vendor_lineage" remote="ext" />
   <project path="vendor/support" name="android_vendor_support" remote="ext" />
   <project path="bionic" name="android_bionic" remote="ext" />
@@ -70,6 +75,5 @@
 
  <!-- yaap additions -->
   <project path="vendor/google/gms" name="vendor_google_gms" remote="yaap-gl" />
-  <project path="vendor/google/pixel" name="vendor_google_pixel" remote="yaap-gl" />
 
 </manifest>
